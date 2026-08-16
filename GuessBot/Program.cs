@@ -28,6 +28,11 @@ class Program
         // Load variables from .env
         Env.Load();
 
+        Console.WriteLine("---ENV DUMP---");
+        foreach (System.Collections.DictionaryEntry e in Environment.GetEnvironmentVariables())
+            Console.WriteLine($"{e.Key} = {e.Value}");
+        Console.WriteLine("---END DUMP---");
+
         string? botToken = Environment.GetEnvironmentVariable("DISCORD_BOT_TOKEN");
         string? serverId = Environment.GetEnvironmentVariable("DISCORD_SERVER_ID");
 
